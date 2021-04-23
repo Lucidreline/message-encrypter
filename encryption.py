@@ -1,10 +1,17 @@
-def encrypt(msg):
-    increase = 1
+
+increase = 1
+
+
+def encrypt(msg, encryption):
     message = list(msg)
     # increase each letter by 'increase'
 
-    for i in range(len(message)):
-        message[i] = chr(ord(message[i]) + increase)
+    if encryption:
+        for i in range(len(message)):
+            message[i] = chr(ord(message[i]) + increase)
+    else:
+        for i in range(len(message)):
+            message[i] = chr(ord(message[i]) - increase)
 
     return "".join(message)
     # reverse order of letters

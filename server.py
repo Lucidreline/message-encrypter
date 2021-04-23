@@ -6,9 +6,9 @@ app = Flask(__name__)  # creates an instance
 
 @app.route('/encrypt/<string:decryptedMsg>')
 def encrypt(decryptedMsg):
-    return encryption.encrypt(decryptedMsg)
+    return encryption.encrypt(decryptedMsg, True)
 
 
-@app.route('/welcome/<string:encryptedMsg>')
-def welcome(name):
-    return 'Welcome, %s!' % name
+@app.route('/decrypt/<string:encryptedMsg>')
+def decrypt(encryptedMsg):
+    return encryption.encrypt(encryptedMsg, False)
