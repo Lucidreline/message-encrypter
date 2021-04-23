@@ -13,5 +13,7 @@ def encrypt(msg, encryption):
         for i in range(len(message)):
             message[i] = chr(ord(message[i]) - increase)
 
+    message.reverse()
+
     return "".join(message)
     # reverse order of letters
